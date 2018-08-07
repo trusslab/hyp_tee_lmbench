@@ -46,7 +46,8 @@ int
 handle_scheduler(int childno, int benchproc, int nbenchprocs)
 {
 	int	cpu = 0;
-	char*	sched = getenv("LMBENCH_SCHED");
+//	char*	sched = getenv("LMBENCH_SCHED"); //for multi-core experiments
+	char*	sched = "SINGLE" //for single-core experiments
 	
 	if (!sched || strcasecmp(sched, "DEFAULT") == 0) {
 		/* do nothing.  Allow scheduler to control placement */
